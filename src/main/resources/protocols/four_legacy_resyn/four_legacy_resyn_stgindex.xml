@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<!--
+Copyright 2018 Norman Kluge
+ 
+This file is part of ASGprotocols.
+ 
+ASGprotocols is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+ASGprotocols is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with ASGprotocols.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<stgindex>
+    <component breezename="BrzActiveEagerFalseVariable" stgfile="stgs/four_legacy_resyn_activeeagerfalsevariable.g"/>
+    <component breezename="BrzAdapt" stgfile="stgs/four_legacy_resyn_adapt.g"/>
+    <component breezename="BrzArbiter" stgfile="stgs/four_legacy_resyn_arbiter.g"/>
+    <component breezename="BrzBinaryFunc" stgfile="stgs/four_legacy_resyn_binaryfunc.g"/>
+    <component breezename="BrzBinaryFuncConstR" stgfile="stgs/four_legacy_resyn_binaryfuncconstr.g"/>
+    <component breezename="BrzCall" stgfile="stgs/four_legacy_resyn_call.g"/>
+    <component breezename="BrzCallDemux" stgfile="stgs/four_legacy_resyn_calldemux.g"/>
+    <component breezename="BrzCallMux" stgfile="stgs/four_legacy_resyn_callmux.g"/>
+    <component breezename="BrzCase" stgfile="stgs/four_legacy_resyn_case.g"/>
+    <component breezename="BrzCaseFetch" stgfile="stgs/four_legacy_resyn_casefetch.g"/>
+    <component breezename="BrzCombine" stgfile="stgs/four_legacy_resyn_combine.g"/>
+    <component breezename="BrzCombineEqual" stgfile="stgs/four_legacy_resyn_combineequal.g"/>
+    <component breezename="BrzConcur" stgfile="stgs/four_legacy_resyn_concur.g"/>
+    <component breezename="BrzConstant" stgfile="stgs/four_legacy_resyn_constant.g"/>
+    <component breezename="BrzContinue" stgfile="stgs/four_legacy_resyn_continue.g"/>
+    <component breezename="BrzContinuePush" stgfile="stgs/four_legacy_resyn_continuepush.g"/>
+    <component breezename="BrzDecisionWait" stgfile="stgs/four_legacy_resyn_decisionwait.g"/>
+    <component breezename="BrzEncode" stgfile="stgs/four_legacy_resyn_encode.g"/>
+    <component breezename="BrzFalseVariable" stgfile="stgs/four_legacy_resyn_falsevariable.g"/>
+    <component breezename="BrzFetch" stgfile="stgs/four_legacy_resyn_fetch.g"/>
+    <component breezename="BrzFork" stgfile="stgs/four_legacy_resyn_fork.g"/>
+    <component breezename="BrzLoop" stgfile="stgs/four_legacy_resyn_loop.g"/>
+    <component breezename="BrzNullAdapt" stgfile="stgs/four_legacy_resyn_nulladapt.g"/>
+    <component breezename="BrzPassivatorPush" stgfile="stgs/four_legacy_resyn_passivatorpush.g"/>
+    <component breezename="BrzSequence" stgfile="stgs/four_legacy_resyn_sequence.g"/>
+    <component breezename="BrzSlice" stgfile="stgs/four_legacy_resyn_slice.g"/>
+    <component breezename="BrzSplit" stgfile="stgs/four_legacy_resyn_split.g"/>
+    <component breezename="BrzSplitEqual" stgfile="stgs/four_legacy_resyn_splitequal.g"/>
+    <component breezename="BrzSynch" stgfile="stgs/four_legacy_resyn_synch.g"/>
+    <component breezename="BrzSynchPush" stgfile="stgs/four_legacy_resyn_synchpush.g"/>
+    <component breezename="BrzUnaryFunc" stgfile="stgs/four_legacy_resyn_unaryfunc.g"/>
+    <component breezename="BrzVariable" stgfile="stgs/four_legacy_resyn_variable.g"/>
+    <component breezename="BrzWhile" stgfile="stgs/four_legacy_resyn_while.g"/>
+    <component breezename="BrzWireFork" stgfile="stgs/four_legacy_resyn_wirefork.g"/>
+</stgindex>
