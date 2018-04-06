@@ -49,8 +49,11 @@ along with ASGprotocols.  If not, see <http://www.gnu.org/licenses/>.
 			<directory>src/main/resources</directory>
 			<outputDirectory>.</outputDirectory>
 			<includes>
-				<include>protocols/**/*</include>
+				<include>protocols/**</include>
 			</includes>
+			<excludes>
+				<exclude>protocols/*/balsastyle/**</exclude>
+			</excludes>
 		</fileSet>
 	</fileSets>
 	<dependencySets>
