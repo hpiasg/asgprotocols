@@ -52,6 +52,7 @@ along with ASGprotocols.  If not, see <http://www.gnu.org/licenses/>.
 				<include>protocols/**</include>
 			</includes>
 			<excludes>
+				<exclude>**/*.work</exclude>
 				<exclude>protocols/*/balsastyle/**</exclude>
 			</excludes>
 		</fileSet>
