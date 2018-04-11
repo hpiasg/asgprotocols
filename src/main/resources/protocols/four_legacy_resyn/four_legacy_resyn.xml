@@ -23,5 +23,5 @@ along with ASGprotocols.  If not, see <http://www.gnu.org/licenses/>.
     <name>four_legacy_resyn</name>
     <balsastyle>four_legacy_resyn</balsastyle>
     <delaymatchfile>four_legacy_resyn_delaymatch.xml</delaymatchfile>
-    <stgindexfile>four_legacy_resyn_stg_aa_index.xml</stgindexfile>
+    <stgindexfile>four_legacy_resyn_stgindex.xml</stgindexfile>
 </protocol>
