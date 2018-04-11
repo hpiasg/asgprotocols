@@ -1,4 +1,4 @@
-package de.uni_potsdam.hpi.asg.protocols.io;
+package de.uni_potsdam.hpi.asg.protocols.io.stgindex;
 
 /*
  * Copyright (C) 2018 Norman Kluge
@@ -20,6 +20,7 @@ package de.uni_potsdam.hpi.asg.protocols.io;
  */
 
 import java.io.File;
+import java.util.List;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -29,44 +30,39 @@ import javax.xml.bind.annotation.XmlRootElement;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-@XmlRootElement(name = "protocol")
+@XmlRootElement(name = "stgindex")
 @XmlAccessorType(XmlAccessType.NONE)
-public class Protocol {
+public class STGIndex {
     protected static final Logger logger = LogManager.getLogger();
 
     //@formatter:off
-    @XmlElement(name = "name", required = true)
-    private String name;
-    @XmlElement(name = "balsastyle", required = true)
-    private String balsaStyle;
-    @XmlElement(name = "delaymatchfile", required = true)
-    private String delaymatchFile;
-    @XmlElement(name = "stgindexfile", required = true)
-    private String stgIndexFile;
+    @XmlElement(name = "component")
+    private List<STGComponent> components;
     //@formatter:on
 
-    private File                  mainDir;
+    private File                  protocolDir;
 
-    protected Protocol() {
+    protected STGIndex() {
     }
 
-    public void setMainDir(File mainDir) {
-        this.mainDir = mainDir;
+    public STGIndex(List<STGComponent> components) {
+        this.components = components;
     }
 
-    public String getName() {
-        return name;
+    public List<STGComponent> getComponents() {
+        return components;
     }
 
-    public String getBalsaStyle() {
-        return balsaStyle;
+    public File getSTGFileForComponent(String name) {
+        for(STGComponent comp : components) {
+            if(comp.getBreezename().equals(name)) {
+                return new File(protocolDir, comp.getStgFileName());
+            }
+        }
+        return null;
     }
 
-    public File getDelaymatchFile() {
-        return new File(mainDir, delaymatchFile);
-    }
-
-    public File getStgIndexFile() {
-        return new File(mainDir, stgIndexFile);
+    protected void setProtocolDir(File protocolDir) {
+        this.protocolDir = protocolDir;
     }
 }

@@ -1,4 +1,4 @@
-package de.uni_potsdam.hpi.asg.protocols.io;
+package de.uni_potsdam.hpi.asg.protocols.io.main;
 
 /*
  * Copyright (C) 2018 Norman Kluge
