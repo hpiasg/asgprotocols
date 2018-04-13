@@ -50,7 +50,7 @@ public class Protocol {
     protected Protocol() {
     }
 
-    public void setMainDir(File mainDir) {
+    protected void setMainDir(File mainDir) {
         this.mainDir = mainDir;
     }
 
