@@ -41,7 +41,7 @@ public class Protocol {
     private String balsaStyle;
     @XmlElement(name = "delaymatchfile", required = true)
     private String delaymatchFile;
-    @XmlElement(name = "stgindexfile", required = true)
+    @XmlElement(name = "stgindexfile")
     private String stgIndexFile;
     //@formatter:on
 

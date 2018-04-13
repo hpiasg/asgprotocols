@@ -8,7 +8,7 @@
       <xs:element name="name" type="xs:string"/>
       <xs:element name="balsastyle" type="xs:string"/>
       <xs:element name="delaymatchfile" type="xs:string"/>
-      <xs:element name="stgindexfile" type="xs:string"/>
+      <xs:element name="stgindexfile" type="xs:string" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
 </xs:schema>

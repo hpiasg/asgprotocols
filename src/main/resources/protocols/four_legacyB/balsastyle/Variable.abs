@@ -1,0 +1,29 @@
+(defines
+    (latch (style-option "latch" "latch"))
+)
+(nodes
+    ("data" (param "width") 0 1)
+    ("c" 1 0 1)
+    ("c_not" 1 0 1)
+    ("c_del" 1 0 1)
+    ("s" 1 0 1)
+    ("s_not" 1 0 1)
+    ("x" 1 0 1)
+)
+(gates
+    (cell latch
+        (combine (dup (param "width") (node "c")))
+        (data "write")
+        (node "data")
+    )
+    (macro single-rail-connect-read-ports (param "width") (param "readPortCount") (param "specification") "data")
+    (connect (combine (req (each "read"))) (combine (ack (each "read"))))
+    
+    (and (node "c") (req "write") (node "s_not"))
+    (inv (node "c_not") (node "c"))
+    (inv (node "c_del") (node "c_not"))
+    (nor (ack "write") (node "c_del") (node "s_not"))
+    (or (node "x") (node "s") (node "c_del"))
+    (and (node "s") (node "x") (req "write"))
+    (inv (node "s_not") (node "s"))    
+)

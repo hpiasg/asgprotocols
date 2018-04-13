@@ -18,7 +18,7 @@
 ;;;	Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
 ;;;
 ;;;	`startup.scm'
-;;; four_legacy_resyn style startup
+;;; four_legacyB style startup
 ;;;
 
 (set! tech-sync-channel-portions
@@ -33,30 +33,61 @@
 (for-each (lambda (component)
    	(if (list? component) ; (name from-name from-style)
 		(brz-add-primitive-part-implementation (car component)
-			`(style "four_legacy_resyn" (include style ,(caddr component) ,(cadr component)))
+			`(style "four_legacyB" (include style ,(caddr component) ,(cadr component)))
 		)
 		(brz-add-primitive-part-implementation component
-			`(style "four_legacy_resyn" (include style "four_legacy_resyn" ,component))
+			`(style "four_legacyB" (include style "four_legacyB" ,component))
 		)
     )
 ) '(
     "ActiveEagerFalseVariable"
+    "ActiveEagerNullAdapt"
     "Adapt"
     "Arbiter"
+    "Bar"
     "BinaryFunc"
     "BinaryFuncConstR"
+    ("BinaryFuncConstRPush" "BinaryFuncConstR" "four_legacyB")
+    ("BinaryFuncPush" "BinaryFunc" "four_legacyB")
+    "Call"
+    "CallActive"
+    "CallDemux"
+    "CallDemuxPush"
     "CallMux"
     "Case"
     "CaseFetch"
     "Combine"
     "CombineEqual"
+    "Concur"
     "Constant"
+    "Continue"
+    "ContinuePush"
+    "DecisionWait"
     "Encode"
     "FalseVariable"
     "Fetch"
+    "Fork"
+    "ForkPush"
+    "Halt"
+    "HaltPush"
+    "Loop"
+    "NullAdapt"
+    "Passivator"
+    "PassivatorPush"
+    "PassiveEagerFalseVariable"
+    "PassiveEagerNullAdapt"
+    "PassiveSyncEagerFalseVariable"
+    "Sequence"
+    "Slice"
     "Split"
     "SplitEqual"
+    "Synch"
+    "SynchPull"
+    "SynchPush"
     "UnaryFunc"
+    ("UnaryFuncPush" "UnaryFunc" "four_legacyB")
     "Variable"
     "While"
+    "WireFork"
+    "BuiltinVariable"
 ))
