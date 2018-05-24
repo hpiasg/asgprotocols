@@ -3,8 +3,8 @@
 .inputs aD rR rW
 .outputs aR aW rD
 .graph
-aD+ aW+
-aD- aW-
+aD+ rD-
+aD- aW+
 aR+ rR-
 aR- scaled0
 aW+ rW-
@@ -14,7 +14,7 @@ rD- aD-
 rR+ aR+
 rR- aR-
 rW+ rD+
-rW- rD-
+rW- aW-
 p0 rW+
 scaled0 rR+
 .marking {p0 scaled0}
