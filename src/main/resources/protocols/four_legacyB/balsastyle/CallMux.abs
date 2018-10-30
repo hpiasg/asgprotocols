@@ -1,5 +1,5 @@
 (defines
-	(mux-style (style-option "mux" "tristate"))
+	(mux-style (style-option "mux" "gates"))
 )
 (nodes
 	("muxOut" (param "width") 0 1)
