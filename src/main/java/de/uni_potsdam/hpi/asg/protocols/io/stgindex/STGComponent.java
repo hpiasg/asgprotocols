@@ -29,8 +29,10 @@ public class STGComponent {
     //@formatter:off
     @XmlAttribute(name = "breezename", required = true)
     private String breezename;
-    @XmlAttribute(name = "stgfile", required = true)
+    @XmlAttribute(name = "stgfile", required = false)
     private String stgFileName;
+    @XmlAttribute(name = "javaclass", required = false)
+    private String javaclass;
     //@formatter:on
 
     protected STGComponent() {
@@ -47,5 +49,9 @@ public class STGComponent {
 
     public String getStgFileName() {
         return stgFileName;
+    }
+
+    public String getJavaclass() {
+        return javaclass;
     }
 }

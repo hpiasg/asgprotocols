@@ -56,7 +56,19 @@ public class STGIndex {
     public File getSTGFileForComponent(String name) {
         for(STGComponent comp : components) {
             if(comp.getBreezename().equals(name)) {
+                if(comp.getStgFileName() == null) {
+                    return null;
+                }
                 return new File(protocolDir, comp.getStgFileName());
+            }
+        }
+        return null;
+    }
+
+    public String getClassNameForComponent(String name) {
+        for(STGComponent comp : components) {
+            if(comp.getBreezename().equals(name)) {
+                return comp.getJavaclass();
             }
         }
         return null;
