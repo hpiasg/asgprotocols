@@ -43,7 +43,7 @@ along with ASGprotocols.  If not, see <http://www.gnu.org/licenses/>.
     <component breezename="BrzLoop" stgfile="stgs/four_b_rb_resyn_loop.g"/>
     <component breezename="BrzNullAdapt" stgfile="stgs/four_b_rb_resyn_nulladapt.g"/>
     <component breezename="BrzPassivatorPush" stgfile="stgs/four_b_rb_resyn_passivatorpush.g"/>
-    <component breezename="BrzSequence" stgfile="stgs/four_b_rb_resyn_sequence.g"/>
+    <component breezename="BrzSequence" javaclass="de.uni_potsdam.hpi.asg.protocols.four_b_rb_resyn.Sequence"/>
     <component breezename="BrzSlice" stgfile="stgs/four_b_rb_resyn_slice.g"/>
     <component breezename="BrzSplit" stgfile="stgs/four_b_rb_resyn_split.g"/>
     <component breezename="BrzSplitEqual" stgfile="stgs/four_b_rb_resyn_splitequal.g"/>
