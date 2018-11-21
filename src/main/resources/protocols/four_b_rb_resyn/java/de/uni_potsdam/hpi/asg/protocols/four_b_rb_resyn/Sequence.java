@@ -1,29 +1,11 @@
 package de.uni_potsdam.hpi.asg.protocols.four_b_rb_resyn;
 
-/*
- * Copyright (C) 2018 Norman Kluge
- * 
- * This file is part of ASGprotocols.
- * 
- * ASGprotocols is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * ASGprotocols is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with ASGprotocols.  If not, see <http://www.gnu.org/licenses/>.
- */
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import de.uni_potsdam.hpi.asg.breeze2stg.io.components.Breeze2STGComponent;
 import de.uni_potsdam.hpi.asg.breeze2stg.stg.STGGenerator;
 import de.uni_potsdam.hpi.asg.common.breeze.model.HSComponentType;
 import de.uni_potsdam.hpi.asg.common.stg.model.Place;
@@ -34,8 +16,8 @@ import de.uni_potsdam.hpi.asg.common.stg.model.Transition.Edge;
 
 public class Sequence extends STGGenerator {
 
-    public Sequence(String componentName) {
-        super(componentName);
+    public Sequence(Breeze2STGComponent comp) {
+        super(comp.getBreezename());
     }
 
     @Override

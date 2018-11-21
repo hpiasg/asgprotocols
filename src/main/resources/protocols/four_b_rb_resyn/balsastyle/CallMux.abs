@@ -11,7 +11,12 @@
 (gates
 	(case (param "inputCount")
 		((2)
-			(connect (req (bundle "inp" 1)) (node "select"))
+			(cell "set-reset-flip-flop"
+				(req (bundle "inp" 1))
+				(req (bundle "inp" 0))
+				(node "select")
+				(node "nselect")
+			)		
 			(mux2 (req "out") (req (each "inp")) (node "select"))
 			(mux2 (data "out") (data (each "inp")) (combine (dup (param "width") (node "select"))))
 		)
@@ -27,6 +32,12 @@
                 (data "out")
                 (node (each "nwayMuxOut"))
             )
+            (cell "set-reset-flip-flop"
+				(ack (bundle "inp" 1))
+				(ack (bundle "inp" 0))
+				(node "select")
+				(node "nselect")
+			)
         )
 	)
 )
