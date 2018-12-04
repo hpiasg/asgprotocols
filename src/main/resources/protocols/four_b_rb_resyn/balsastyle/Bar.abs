@@ -1,0 +1,22 @@
+(defines
+	(guard-count (param "guardCount"))
+)
+(nodes
+	("bypass" (+ 1 guard-count) 0 1)
+	("outReq" guard-count 0 1)
+)
+(gates
+	(or (data "guard") (data (each "guardInput")))
+	(demux2
+		(slice 0 guard-count (node "bypass"))
+		(slice 1 guard-count (node "bypass"))
+		(node "outReq")
+		(combine (data (each "guardInput")))
+	)
+)
+(connections
+	(connect (req "activate") (slice 0 1 (node "bypass")))
+	(connect (req "guard") (ack "guard"))
+	(connect (combine (node "outReq")) (combine (req (each "activateOut"))))
+	(connect (slice guard-count 1 (node "bypass")) (ack "activate"))
+)

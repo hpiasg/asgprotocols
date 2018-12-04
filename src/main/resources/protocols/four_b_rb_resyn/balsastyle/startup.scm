@@ -43,6 +43,7 @@
     "ActiveEagerFalseVariable"
     "Adapt"
     "Arbiter"
+		"Bar"
     "BinaryFunc"
     "BinaryFuncConstR"
     "CallMux"

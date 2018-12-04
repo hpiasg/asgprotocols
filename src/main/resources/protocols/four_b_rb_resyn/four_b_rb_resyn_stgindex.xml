@@ -24,6 +24,7 @@ along with ASGprotocols.  If not, see <http://www.gnu.org/licenses/>.
     <component breezename="BrzArbiter" stgfile="stgs/four_b_rb_resyn_arbiter.g"/>
     <component breezename="BrzBinaryFunc" stgfile="stgs/four_b_rb_resyn_binaryfunc.g"/>
     <component breezename="BrzBinaryFuncConstR" stgfile="stgs/four_b_rb_resyn_binaryfuncconstr.g"/>
+    <component breezename="BrzBar" stgfile="stgs/four_b_rb_resyn_bar.g"/>
     <component breezename="BrzCall" stgfile="stgs/four_b_rb_resyn_call.g"/>
     <component breezename="BrzCallDemux" stgfile="stgs/four_b_rb_resyn_calldemux.g"/>
     <component breezename="BrzCallMux" javaclass="de.uni_potsdam.hpi.asg.protocols.four_b_rb_resyn.CallMux"/>
