@@ -1,9 +1,9 @@
 package de.uni_potsdam.hpi.asg.protocols.four_b_rb_resyn;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 import de.uni_potsdam.hpi.asg.breeze2stg.io.components.Breeze2STGComponent;
 import de.uni_potsdam.hpi.asg.breeze2stg.stg.STGGenerator;
@@ -28,7 +28,7 @@ public class Sequence extends STGGenerator {
 
         // init place
         Place initPlace = stg.getPlaceOrAdd("p" + (placeId++));
-        List<Place> initMarking = new ArrayList<>();
+        Set<Place> initMarking = new HashSet<>();
         initMarking.add(initPlace);
         stg.setInitMarking(initMarking);
 
