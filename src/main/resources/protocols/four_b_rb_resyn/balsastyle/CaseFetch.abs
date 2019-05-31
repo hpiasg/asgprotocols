@@ -1,3 +1,13 @@
+;;; (inp) out_r     = rD
+;;; (out) out_a     = aL
+;;; (out) out_d[]   = dO[]
+;;; (out) index_r   = aG
+;;; (inp) index_a   = rE
+;;; (inp) index_d[] = dN[]
+;;; (out) inp_r*    = aF*
+;;; (inp) inp_a*		= rK*
+;;; (inp) inp_d*[]  = dI*=dK*
+
 (nodes
 	("t" (param "indexWidth") 0 1)
 	("c" (param "indexWidth") 0 1)
@@ -5,6 +15,7 @@
 	("muxOut" (param "width") 0 (param "inputCount"))
 	("elseAck" 1 0 1)
 	("negReqOut" 1 0 1)
+	("tmpOut" (param "width") 0 1)
 )
 (gates
 	(latch
@@ -12,29 +23,40 @@
 		(data "index")
 		(node "latchedIndex")
 	)
-	(inv (node "negReqOut") (req "out"))
-	(inv (req "index") (node "negReqOut"))
-	
-	
 	(demux2 (combine (dup (param "indexWidth") (ack "index"))) (node "c") (node "t") (node "latchedIndex"))
 	(if (complete-encoding? (param "specification") (param "indexWidth"))
 		(gates
 			(decode and-or (param "specification") (node "c") (node "t") (req (each "inp")))
-			(or (ack "out") (ack (each "inp")))
+;;;			(or (ack "out") (ack (each "inp")))
 		)
 		(gates
 			(decode and-or (param "specification") (node "c") (node "t") (req (each "inp")) (node "elseAck"))
-			(or (ack "out") (ack (each "inp")) (node "elseAck"))
+;;;			(or (ack "out") (ack (each "inp")) (node "elseAck"))
 		)
 	)
+	(connect (node "elseAck") (req "index"))
+
+	;;;-----
+
 	(nand
 		(combine (node (each "muxOut")))
 		(combine (dup-each (param "width") (ack (each "inp"))))
 		(combine (data (each "inp")))
 	)
 	(nand
-		(data "out")
+		(node "tmpOut")
 		(node (each "muxOut"))
 	)
+	(latch
+		(combine (dup (param "width") (ack "index")))
+		(node "tmpOut")
+		(data "out")
+	)
+	(or (ack "out") (ack (each "inp")))
+
+
 	;;;(connect (ack "index") (req "index"))
+	;;;(inv (node "negReqOut") (req "out"))
+	;;;(inv (req "index") (node "negReqOut"))
+
 )
