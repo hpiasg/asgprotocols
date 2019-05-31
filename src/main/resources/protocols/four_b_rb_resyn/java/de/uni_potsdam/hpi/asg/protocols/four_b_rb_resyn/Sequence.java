@@ -34,7 +34,7 @@ public class Sequence extends STGGenerator {
 
         // rA+
         stg.addSignal("rA", SignalType.input);
-        Transition rAp = stg.getTransitionOrAdd("rA", Edge.rising, 0);
+        Transition rAp = stg.getTransitionOrAdd("rA", Edge.rising, 1);
         stg.addConnection(initPlace, rAp);
 
         // rO aO cO+ 0..n-1
@@ -46,30 +46,30 @@ public class Sequence extends STGGenerator {
             groupFirstPlace.put(i, p1);
 
             stg.addSignal("rO" + i, SignalType.output);
-            Transition t1 = stg.getTransitionOrAdd("rO" + i, Edge.rising, 0);
+            Transition t1 = stg.getTransitionOrAdd("rO" + i, Edge.rising, 1);
             stg.addConnection(p1, t1);
             Place p2 = stg.getPlaceOrAdd("p" + (placeId++));
             stg.addConnection(t1, p2);
 
             stg.addSignal("aO" + i, SignalType.input);
-            Transition t2 = stg.getTransitionOrAdd("aO" + i, Edge.rising, 0);
+            Transition t2 = stg.getTransitionOrAdd("aO" + i, Edge.rising, 1);
             stg.addConnection(p2, t2);
             Place p3 = stg.getPlaceOrAdd("p" + (placeId++));
             stg.addConnection(t2, p3);
 
             stg.addSignal("cO" + i, SignalType.internal);
-            Transition t3 = stg.getTransitionOrAdd("cO" + i, Edge.rising, 0);
+            Transition t3 = stg.getTransitionOrAdd("cO" + i, Edge.rising, 1);
             groupCTransition.put(i, t3);
             stg.addConnection(p3, t3);
             Place p4 = stg.getPlaceOrAdd("p" + (placeId++));
             stg.addConnection(t3, p4);
 
-            Transition t4 = stg.getTransitionOrAdd("rO" + i, Edge.falling, 0);
+            Transition t4 = stg.getTransitionOrAdd("rO" + i, Edge.falling, 1);
             stg.addConnection(p4, t4);
             Place p5 = stg.getPlaceOrAdd("p" + (placeId++));
             stg.addConnection(t4, p5);
 
-            Transition t5 = stg.getTransitionOrAdd("aO" + i, Edge.falling, 0);
+            Transition t5 = stg.getTransitionOrAdd("aO" + i, Edge.falling, 1);
             groupLastTransition.put(i, t5);
             stg.addConnection(p5, t5);
         }
@@ -85,35 +85,35 @@ public class Sequence extends STGGenerator {
             groupFirstPlace.put(i, p1);
 
             stg.addSignal("rO" + i, SignalType.output);
-            Transition t1 = stg.getTransitionOrAdd("rO" + i, Edge.rising, 0);
+            Transition t1 = stg.getTransitionOrAdd("rO" + i, Edge.rising, 1);
             stg.addConnection(p1, t1);
             Place p2 = stg.getPlaceOrAdd("p" + (placeId++));
             stg.addConnection(t1, p2);
 
             stg.addSignal("aO" + i, SignalType.input);
-            Transition t2 = stg.getTransitionOrAdd("aO" + i, Edge.rising, 0);
+            Transition t2 = stg.getTransitionOrAdd("aO" + i, Edge.rising, 1);
             stg.addConnection(p2, t2);
             Place p3 = stg.getPlaceOrAdd("p" + (placeId++));
             stg.addConnection(t2, p3);
 
             stg.addSignal("aA", SignalType.output);
-            Transition t3 = stg.getTransitionOrAdd("aA", Edge.rising, 0);
+            Transition t3 = stg.getTransitionOrAdd("aA", Edge.rising, 1);
             stg.addConnection(p3, t3);
             Place p4 = stg.getPlaceOrAdd("p" + (placeId++));
             stg.addConnection(t3, p4);
 
-            Transition t4 = stg.getTransitionOrAdd("rA", Edge.falling, 0);
+            Transition t4 = stg.getTransitionOrAdd("rA", Edge.falling, 1);
             stg.addConnection(p4, t4);
             Place p5 = stg.getPlaceOrAdd("p" + (placeId++));
             stg.addConnection(t4, p5);
 
-            Transition t5 = stg.getTransitionOrAdd("rO" + i, Edge.falling, 0);
+            Transition t5 = stg.getTransitionOrAdd("rO" + i, Edge.falling, 1);
             lastGroupTJoin = t5;
             stg.addConnection(p5, t5);
             Place p6 = stg.getPlaceOrAdd("p" + (placeId++));
             stg.addConnection(t5, p6);
 
-            Transition t6 = stg.getTransitionOrAdd("aO" + i, Edge.falling, 0);
+            Transition t6 = stg.getTransitionOrAdd("aO" + i, Edge.falling, 1);
             lastGroupLastTransition = t6;
             stg.addConnection(p6, t6);
         }
@@ -124,7 +124,7 @@ public class Sequence extends STGGenerator {
             Place p1 = stg.getPlaceOrAdd("p" + (placeId++));
             stg.addConnection(preTrans, p1);
 
-            Transition t1 = stg.getTransitionOrAdd("cO" + i, Edge.falling, 0);
+            Transition t1 = stg.getTransitionOrAdd("cO" + i, Edge.falling, 1);
             preTrans = t1;
             stg.addConnection(p1, t1);
         }
@@ -134,7 +134,7 @@ public class Sequence extends STGGenerator {
             Place p1 = stg.getPlaceOrAdd("p" + (placeId++));
             stg.addConnection(preTrans, p1);
 
-            Transition t1 = stg.getTransitionOrAdd("aA", Edge.falling, 0);
+            Transition t1 = stg.getTransitionOrAdd("aA", Edge.falling, 1);
             stg.addConnection(p1, t1);
             stg.addConnection(t1, initPlace);
         }
