@@ -16,6 +16,10 @@
 	("elseAck" 1 0 1)
 	("negReqOut" 1 0 1)
 	("tmpOut" (param "width") 0 1)
+	("tmpOutAck1" 1 0 1)
+	("tmpOutAck2" 1 0 1)
+	("tmpOutAck3" 1 0 1)
+	("tmpOutAck4" 1 0 1)
 )
 (gates
 	(latch
@@ -52,8 +56,11 @@
 		(node "tmpOut")
 		(data "out")
 	)
-	(or (ack "out") (ack (each "inp")))
-
+	(or (node "tmpOutAck1") (ack (each "inp")))
+	(inv (node "tmpOutAck2") (node "tmpOutAck1"))
+	(inv (node "tmpOutAck3") (node "tmpOutAck2"))
+	(inv (node "tmpOutAck4") (node "tmpOutAck3"))
+	(inv (ack "out") (node "tmpOutAck4"))
 
 	;;;(connect (ack "index") (req "index"))
 	;;;(inv (node "negReqOut") (req "out"))
