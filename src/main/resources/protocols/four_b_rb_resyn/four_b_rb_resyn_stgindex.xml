@@ -29,7 +29,7 @@ along with ASGprotocols.  If not, see <http://www.gnu.org/licenses/>.
     <component breezename="BrzCallDemux" stgfile="stgs/four_b_rb_resyn_calldemux.g"/>
     <component breezename="BrzCallMux" javaclass="de.uni_potsdam.hpi.asg.protocols.four_b_rb_resyn.CallMux"/>
     <component breezename="BrzCase" stgfile="stgs/four_b_rb_resyn_case.g"/>
-    <component breezename="BrzCaseFetch" stgfile="stgs/four_b_rb_resyn_casefetch_desijbug.g"/>
+    <component breezename="BrzCaseFetch" stgfile="stgs/four_b_rb_resyn_casefetch_new.g"/>
     <component breezename="BrzCombine" stgfile="stgs/four_b_rb_resyn_combine.g"/>
     <component breezename="BrzCombineEqual" stgfile="stgs/four_b_rb_resyn_combineequal.g"/>
     <component breezename="BrzConcur" stgfile="stgs/four_b_rb_resyn_concur.g"/>
