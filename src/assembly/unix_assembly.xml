@@ -49,7 +49,18 @@ along with ASGprotocols.  If not, see <http://www.gnu.org/licenses/>.
 			<directory>src/main/resources</directory>
 			<outputDirectory>.</outputDirectory>
 			<includes>
-				<include>protocols/**/*</include>
+				<include>protocols/**</include>
+			</includes>
+			<excludes>
+				<exclude>**/*.work</exclude>
+				<exclude>protocols/*/balsastyle/**</exclude>
+			</excludes>
+		</fileSet>
+		<fileSet> <!-- contents are generated in pom by antrun-plugin using regex -->
+			<directory>${project.build.directory}/balsastyles</directory>
+			<outputDirectory>tools/balsa/share/style</outputDirectory>
+			<includes>
+				<include>**/*</include>
 			</includes>
 		</fileSet>
 	</fileSets>

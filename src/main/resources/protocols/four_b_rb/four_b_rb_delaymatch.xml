@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+Copyright 2017 - 2018 Norman Kluge
+
+This file is part of ASGprotocols.
+
+ASGprotocols is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+ASGprotocols is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+You should have received a copy of the GNU General Public License
+along with ASGprotocols.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<components>
+	<component moduleregex="BrzBar\_\w+">
+		<matchpath foreach="guardInput" id="0">
+			<measure>
+				<from name="guardInput" id="EACH" type="data" bit="ALL" />
+				<to name="guard" id="0" type="data" bit="ALL" />
+			</measure>
+			<match>
+				<from name="guardInput" id="EACH" type="req" />
+				<to name="guard" id="0" type="req" />
+			</match>
+		</matchpath>
+	</component>
+	<component moduleregex="BrzBinaryFunc\_\w+">
+		<matchpath id="0">
+			<measure>
+				<from name="inpA" id="0" type="data" bit="ALL" />
+				<from name="inpB" id="0" type="data" bit="ALL" />
+				<to name="out" id="0" type="data" bit="ALL" />
+			</measure>
+			<match>
+				<from name="inpA" id="0" type="ack" />
+				<from name="inpB" id="0" type="ack" />
+				<to name="out" id="0" type="ack" />
+			</match>
+		</matchpath>
+	</component>
+	<component moduleregex="BrzBinaryFuncConstR\_\w+">
+		<matchpath id="0">
+			<measure>
+				<from name="inpA" id="0" type="data" bit="ALL" />
+				<to name="out" id="0" type="data" bit="ALL" />
+			</measure>
+			<match>
+				<from name="inpA" id="0" type="ack" />
+				<to name="out" id="0" type="ack" />
+			</match>
+		</matchpath>
+	</component>
+	<component moduleregex="BrzCallMux\_\w+">
+		<matchpath foreach="inp" id="0">
+			<measure>
+				<from name="inp" id="EACH" type="data" bit="ALL" />
+				<to name="out" id="0" type="data" bit="ALL" />
+			</measure>
+			<match>
+				<from name="inp" id="EACH" type="req" />
+				<to name="out" id="0" type="req" />
+			</match>
+		</matchpath>
+	</component>
+	<component moduleregex="BrzEncode\_\w+">
+		<matchpath foreach="inp" id="0">
+			<measure>
+				<from name="inp" id="EACH" type="req" />
+				<to name="out" id="0" type="data" bit="ALL" />
+			</measure>
+			<match>
+				<from name="inp" id="EACH" type="req" />
+				<to name="out" id="0" type="req" />
+			</match>
+		</matchpath>
+	</component>
+	<component moduleregex="BrzUnaryFunc\_\w+">
+		<matchpath id="0">
+			<measure>
+				<from name="inp" id="0" type="data" bit="ALL" />
+				<to name="out" id="0" type="data" bit="ALL" />
+			</measure>
+			<match>
+				<from name="inp" id="0" type="ack" />
+				<to name="out" id="0" type="ack" />
+			</match>
+		</matchpath>
+	</component>
+</components>

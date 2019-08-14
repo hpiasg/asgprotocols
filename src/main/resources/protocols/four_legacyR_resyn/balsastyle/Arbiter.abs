@@ -1,0 +1,4 @@
+(nodes)
+(gates
+	(mutex (req "inpA") (req "inpB") (ack "inpA") (ack "inpB"))
+)
