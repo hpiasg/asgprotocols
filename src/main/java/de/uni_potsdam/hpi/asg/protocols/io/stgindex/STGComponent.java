@@ -1,7 +1,7 @@
 package de.uni_potsdam.hpi.asg.protocols.io.stgindex;
 
 /*
- * Copyright (C) 2018 Norman Kluge
+ * Copyright (C) 2018 - 2021 Norman Kluge
  * 
  * This file is part of ASGprotocols.
  * 
@@ -19,9 +19,9 @@ package de.uni_potsdam.hpi.asg.protocols.io.stgindex;
  * along with ASGprotocols.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlAttribute;
 
 @XmlAccessorType(XmlAccessType.NONE)
 public class STGComponent {

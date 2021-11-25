@@ -1,7 +1,7 @@
 package de.uni_potsdam.hpi.asg.protocols.io.stgindex;
 
 /*
- * Copyright (C) 2018 Norman Kluge
+ * Copyright (C) 2018 - 2021 Norman Kluge
  * 
  * This file is part of ASGprotocols.
  * 
@@ -25,10 +25,10 @@ import java.io.IOException;
 import java.io.Writer;
 
 import javax.xml.XMLConstants;
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.Marshaller;
-import javax.xml.bind.Unmarshaller;
+import jakarta.xml.bind.JAXBContext;
+import jakarta.xml.bind.JAXBException;
+import jakarta.xml.bind.Marshaller;
+import jakarta.xml.bind.Unmarshaller;
 import javax.xml.transform.stream.StreamSource;
 import javax.xml.validation.Schema;
 import javax.xml.validation.SchemaFactory;
@@ -45,9 +45,9 @@ public class STGIndexFile {
         return internalReadIn(file, true);
     }
 
-//    public static boolean isValidFile(File file) {
-//        return internalReadIn(file, false) != null;
-//    }
+    //    public static boolean isValidFile(File file) {
+    //        return internalReadIn(file, false) != null;
+    //    }
 
     private static STGIndex internalReadIn(File file, boolean verbose) {
         try {
