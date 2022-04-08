@@ -18,7 +18,7 @@ Included protocols:
 
 ### Build instructions ###
 
-To build ASGprotocols, Apache Maven v3 (or later) and the Java Development Kit (JDK) v1.7 (or later) are required.
+To build ASGprotocols, Apache Maven v3.1.1 (or later) and the Java Development Kit (JDK) v1.8 (or later) are required.
 
 1. Build [ASGcommon](https://github.com/hpiasg/asgcommon)
-4. Execute `mvn clean install -DskipTests`
+2. Execute `mvn clean install -DskipTests`

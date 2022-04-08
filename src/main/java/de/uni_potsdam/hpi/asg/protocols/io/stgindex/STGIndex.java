@@ -1,7 +1,7 @@
 package de.uni_potsdam.hpi.asg.protocols.io.stgindex;
 
 /*
- * Copyright (C) 2018 Norman Kluge
+ * Copyright (C) 2018 - 2021 Norman Kluge
  * 
  * This file is part of ASGprotocols.
  * 
@@ -22,10 +22,10 @@ package de.uni_potsdam.hpi.asg.protocols.io.stgindex;
 import java.io.File;
 import java.util.List;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlRootElement;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

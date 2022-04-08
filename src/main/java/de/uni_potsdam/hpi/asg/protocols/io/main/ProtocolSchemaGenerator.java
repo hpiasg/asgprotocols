@@ -1,7 +1,7 @@
 package de.uni_potsdam.hpi.asg.protocols.io.main;
 
 /*
- * Copyright (C) 2018 Norman Kluge
+ * Copyright (C) 2018 - 2021 Norman Kluge
  * 
  * This file is part of ASGprotocols.
  * 
@@ -22,9 +22,9 @@ package de.uni_potsdam.hpi.asg.protocols.io.main;
 import java.io.File;
 import java.io.IOException;
 
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.SchemaOutputResolver;
+import jakarta.xml.bind.JAXBContext;
+import jakarta.xml.bind.JAXBException;
+import jakarta.xml.bind.SchemaOutputResolver;
 import javax.xml.transform.Result;
 import javax.xml.transform.stream.StreamResult;
 
